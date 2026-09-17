@@ -1,0 +1,8 @@
+{"time":"2026-09-17T18:08:50.072206244-05:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2026-09-17T18:08:50.07223774-05:00","level":"INFO","msg":"created symlink","path":"/mnt/data2/radke149/LUFFY/luffy/verl/wandb/run-20260917_180850-nyqlxc0x/logs/debug-core.log"}
+{"time":"2026-09-17T18:08:50.195587735-05:00","level":"INFO","msg":"created new stream","id":"nyqlxc0x"}
+{"time":"2026-09-17T18:08:50.195686369-05:00","level":"INFO","msg":"stream: started","id":"nyqlxc0x"}
+{"time":"2026-09-17T18:08:50.195807027-05:00","level":"INFO","msg":"handler: started","stream_id":"nyqlxc0x"}
+{"time":"2026-09-17T18:08:50.196448376-05:00","level":"INFO","msg":"writer: Do: started","stream_id":"nyqlxc0x"}
+{"time":"2026-09-17T18:08:50.196453358-05:00","level":"INFO","msg":"sender: started","stream_id":"nyqlxc0x"}
+{"time":"2026-09-17T18:08:50.653896489-05:00","level":"INFO","msg":"Starting system monitor"}

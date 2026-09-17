@@ -1,0 +1,11 @@
+LICENSE
+setup.py
+deepscaler/__init__.py
+deepscaler/globals.py
+deepscaler/system_prompts.py
+deepscaler/utils.py
+luffy.egg-info/PKG-INFO
+luffy.egg-info/SOURCES.txt
+luffy.egg-info/dependency_links.txt
+luffy.egg-info/requires.txt
+luffy.egg-info/top_level.txt
