@@ -1,0 +1,103 @@
+{
+  "os":  "Linux-6.11.0-17-generic-x86_64-with-glibc2.39",
+  "python":  "CPython 3.10.20",
+  "startedAt":  "2026-09-17T23:42:02.464726Z",
+  "args":  [
+    "--node-ip-address=128.101.106.33",
+    "--node-manager-port=39131",
+    "--object-store-name=/tmp/ray/session_2026-09-17_18-40-34_128727_674571/sockets/plasma_store",
+    "--raylet-name=/tmp/ray/session_2026-09-17_18-40-34_128727_674571/sockets/raylet",
+    "--redis-address=None",
+    "--metrics-agent-port=56997",
+    "--runtime-env-agent-port=35825",
+    "--logging-rotate-bytes=536870912",
+    "--logging-rotate-backup-count=5",
+    "--runtime-env-agent-port=35825",
+    "--gcs-address=128.101.106.33:40020",
+    "--session-name=session_2026-09-17_18-40-34_128727_674571",
+    "--temp-dir=/tmp/ray",
+    "--webui=127.0.0.1:8265",
+    "--cluster-id=4c949e4f3090a2c051db9bd6a965df18b712b34fe03e9931f4294d1d",
+    "--startup-token=64",
+    "--worker-launch-time-ms=1789688437483",
+    "--node-id=33af67e73087b268ccb82feba77e90877d89ea4d4dd869b9d5b1d38f",
+    "--runtime-env-hash=-900561946"
+  ],
+  "program":  "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/ray/_private/workers/default_worker.py",
+  "git":  {
+    "remote":  "git@github.com:settheworldonfireiii/LUFF05.git",
+    "commit":  "17631a867ad12db692c4497b02f3dd5485e8ce43"
+  },
+  "email":  "radke149@umn.edu",
+  "root":  "/mnt/data2/radke149/LUFFY/luffy/verl",
+  "host":  "cs-u-iteb361",
+  "executable":  "/mnt/data2/radke149/miniconda3/envs/luffy/bin/python3",
+  "cpu_count":  32,
+  "cpu_count_logical":  64,
+  "gpu":  "Quadro RTX 6000",
+  "gpu_count":  8,
+  "disk":  {
+    "/":  {
+      "total":  "1887977426944",
+      "used":  "1699950436352"
+    }
+  },
+  "memory":  {
+    "total":  "540639227904"
+  },
+  "cpu":  {
+    "count":  32,
+    "countLogical":  64
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "Quadro RTX 6000",
+      "memoryTotal":  "25769803776",
+      "cudaCores":  4608,
+      "architecture":  "Turing"
+    },
+    {
+      "name":  "Quadro RTX 6000",
+      "memoryTotal":  "25769803776",
+      "cudaCores":  4608,
+      "architecture":  "Turing"
+    },
+    {
+      "name":  "Quadro RTX 6000",
+      "memoryTotal":  "25769803776",
+      "cudaCores":  4608,
+      "architecture":  "Turing"
+    },
+    {
+      "name":  "Quadro RTX 6000",
+      "memoryTotal":  "25769803776",
+      "cudaCores":  4608,
+      "architecture":  "Turing"
+    },
+    {
+      "name":  "Quadro RTX 6000",
+      "memoryTotal":  "25769803776",
+      "cudaCores":  4608,
+      "architecture":  "Turing"
+    },
+    {
+      "name":  "Quadro RTX 6000",
+      "memoryTotal":  "25769803776",
+      "cudaCores":  4608,
+      "architecture":  "Turing"
+    },
+    {
+      "name":  "Quadro RTX 6000",
+      "memoryTotal":  "25769803776",
+      "cudaCores":  4608,
+      "architecture":  "Turing"
+    },
+    {
+      "name":  "Quadro RTX 6000",
+      "memoryTotal":  "25769803776",
+      "cudaCores":  4608,
+      "architecture":  "Turing"
+    }
+  ],
+  "cudaVersion":  "12.4"
+}

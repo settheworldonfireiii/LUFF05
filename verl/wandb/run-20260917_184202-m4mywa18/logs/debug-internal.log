@@ -1,0 +1,8 @@
+{"time":"2026-09-17T18:42:02.46699676-05:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2026-09-17T18:42:02.467015662-05:00","level":"INFO","msg":"created symlink","path":"/mnt/data2/radke149/LUFFY/luffy/verl/wandb/run-20260917_184202-m4mywa18/logs/debug-core.log"}
+{"time":"2026-09-17T18:42:02.584889006-05:00","level":"INFO","msg":"created new stream","id":"m4mywa18"}
+{"time":"2026-09-17T18:42:02.584961644-05:00","level":"INFO","msg":"stream: started","id":"m4mywa18"}
+{"time":"2026-09-17T18:42:02.584987282-05:00","level":"INFO","msg":"writer: Do: started","stream_id":"m4mywa18"}
+{"time":"2026-09-17T18:42:02.585065659-05:00","level":"INFO","msg":"sender: started","stream_id":"m4mywa18"}
+{"time":"2026-09-17T18:42:02.585086637-05:00","level":"INFO","msg":"handler: started","stream_id":"m4mywa18"}
+{"time":"2026-09-17T18:42:03.292726631-05:00","level":"INFO","msg":"Starting system monitor"}

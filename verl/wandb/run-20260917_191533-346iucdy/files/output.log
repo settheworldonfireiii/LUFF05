@@ -1,0 +1,16 @@
+Using LocalLogger is deprecated. The constructor API will change
+Checkpoint tracker file does not exist: %s /mnt/data2/radke149/LUFFY/luffy/verl/checkpoints/luffy-math-test/LUFFY_TEST/latest_checkpointed_iteration.txt
+Training from scratch
+ERROR:2026-09-17 19:19:37,481:Error comparing zoo and zoo
+Traceback (most recent call last):
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/math_verify/grader.py", line 700, in compare_single_extraction_wrapper
+    return compare_single_extraction(g, t)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/math_verify/utils.py", line 50, in wrapper
+    return func(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/math_verify/grader.py", line 682, in compare_single_extraction
+    return sympy_expr_eq(gold, target, float_rounding, numeric_precision, strict)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/math_verify/grader.py", line 565, in sympy_expr_eq
+    if sympy_str_eq(gold, pred):
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/math_verify/grader.py", line 311, in sympy_str_eq
+    raise ValueError("Can't evaluate nan or zoo")
+ValueError: Can't evaluate nan or zoo

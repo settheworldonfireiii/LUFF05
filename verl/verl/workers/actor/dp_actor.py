@@ -50,6 +50,46 @@ except ImportError:
 __all__ = ['DataParallelPPOActor']
 
 
+from transformers.models.qwen2.modeling_qwen2 import Qwen2ForCausalLM
+from verl.utils.experimental.torch_functional import FusedLinearForPPO
+
+_FUSED_LINEAR_PPO = FusedLinearForPPO(chunk_size=128)
+
+def _qwen2_forward_fused_ppo(
+    self,
+    input_ids=None,
+    attention_mask=None,
+    position_ids=None,
+    ppo_labels=None,
+    temperature=1.0,
+    **kwargs,
+):
+    outputs = self.model(
+        input_ids=input_ids,
+        attention_mask=attention_mask,
+        position_ids=position_ids,
+        use_cache=False,
+        return_dict=True,
+    )
+
+    response_length = ppo_labels.shape[1]
+
+    hidden = outputs.last_hidden_state[
+        :, -response_length - 1 : -1, :
+    ]
+
+    return _FUSED_LINEAR_PPO(
+        hidden_states=hidden,
+        vocab_weights=self.lm_head.weight,
+        input_ids=ppo_labels,
+        temperature=temperature,
+    )
+
+Qwen2ForCausalLM.forward = _qwen2_forward_fused_ppo
+
+
+
+
 class DataParallelPPOActor(BasePPOActor):
 
     def __init__(
@@ -143,16 +183,12 @@ class DataParallelPPOActor(BasePPOActor):
                 log_probs = full_log_probs.squeeze(-1)[:, -response_length - 1:-1]  # (bsz, response_length)
 
             else:  # not using rmpad and no ulysses sp
-                output = self.actor_module(input_ids=input_ids,
-                                           attention_mask=attention_mask,
-                                           position_ids=position_ids,
-                                           use_cache=False)  # prevent model thinks we are generating
-                logits = output.logits
-                logits.div_(temperature)
-                logits = logits[:, -response_length - 1:-1]  # (bsz, response_length)
-                log_probs = logprobs_from_logits(logits, micro_batch['responses'])
-                entropy = verl_F.entropy_from_logits(logits)  # (bsz, response_length)
-
+                log_probs, entropy = self.actor_module(
+                input_ids=input_ids,
+                attention_mask=attention_mask,
+                position_ids=position_ids,
+                ppo_labels=micro_batch["responses"],
+                temperature=temperature,)
             return entropy, log_probs
 
     def _optimizer_step(self):

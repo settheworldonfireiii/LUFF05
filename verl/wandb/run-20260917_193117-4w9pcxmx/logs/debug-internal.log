@@ -1,0 +1,9 @@
+{"time":"2026-09-17T19:31:17.713334998-05:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2026-09-17T19:31:17.713366827-05:00","level":"INFO","msg":"created symlink","path":"/mnt/data2/radke149/LUFFY/luffy/verl/wandb/run-20260917_193117-4w9pcxmx/logs/debug-core.log"}
+{"time":"2026-09-17T19:31:17.837966891-05:00","level":"INFO","msg":"created new stream","id":"4w9pcxmx"}
+{"time":"2026-09-17T19:31:17.838049803-05:00","level":"INFO","msg":"stream: started","id":"4w9pcxmx"}
+{"time":"2026-09-17T19:31:17.838086348-05:00","level":"INFO","msg":"writer: Do: started","stream_id":"4w9pcxmx"}
+{"time":"2026-09-17T19:31:17.838157622-05:00","level":"INFO","msg":"sender: started","stream_id":"4w9pcxmx"}
+{"time":"2026-09-17T19:31:17.838179679-05:00","level":"INFO","msg":"handler: started","stream_id":"4w9pcxmx"}
+{"time":"2026-09-17T19:31:18.333647328-05:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-09-17T19:50:33.723668189-05:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/lieblingsdoner/luffy-math-test/4w9pcxmx/file_stream\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}

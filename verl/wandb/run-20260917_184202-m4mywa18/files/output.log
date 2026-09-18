@@ -1,0 +1,226 @@
+Using LocalLogger is deprecated. The constructor API will change
+Checkpoint tracker file does not exist: %s /mnt/data2/radke149/LUFFY/luffy/verl/checkpoints/luffy-math-test/LUFFY_TEST/latest_checkpointed_iteration.txt
+Training from scratch
+ERROR:2026-09-17 18:46:14,573:Error comparing zoo and zoo
+Traceback (most recent call last):
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/math_verify/grader.py", line 700, in compare_single_extraction_wrapper
+    return compare_single_extraction(g, t)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/math_verify/utils.py", line 50, in wrapper
+    return func(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/math_verify/grader.py", line 682, in compare_single_extraction
+    return sympy_expr_eq(gold, target, float_rounding, numeric_precision, strict)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/math_verify/grader.py", line 565, in sympy_expr_eq
+    if sympy_str_eq(gold, pred):
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/math_verify/grader.py", line 311, in sympy_str_eq
+    raise ValueError("Can't evaluate nan or zoo")
+ValueError: Can't evaluate nan or zoo
+Unhandled error (suppress with 'RAY_IGNORE_UNHANDLED_ERRORS=1'): [36mray::WorkerDict.actor_rollout_compute_log_prob()[39m (pid=689413, ip=128.101.106.33, actor_id=946757cb914be29924a663b001000000, repr=<verl.single_controller.ray.base.WorkerDict object at 0x78fc15599e40>)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/single_controller/ray/base.py", line 399, in func
+    return getattr(self.worker_dict[key], name)(*args, **kwargs)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/single_controller/base/decorator.py", line 404, in inner
+    return func(*args, **kwargs)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/mix_src/mix_fsdp_worker.py", line 451, in compute_log_prob
+    old_log_probs = self.actor.compute_log_prob(data=data)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/workers/actor/dp_actor.py", line 206, in compute_log_prob
+    _, log_probs = self._forward_micro_batch(micro_batch, temperature=temperature)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/workers/actor/dp_actor.py", line 146, in _forward_micro_batch
+    output = self.actor_module(input_ids=input_ids,
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py", line 863, in forward
+    output = self._fsdp_wrapped_module(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 1179, in forward
+    logits = self.lm_head(hidden_states[:, -num_logits_to_keep:, :])
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/linear.py", line 117, in forward
+    return F.linear(input, self.weight, self.bias)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 41.73 GiB. GPU 0 has a total capacity of 23.64 GiB of which 22.23 GiB is free. Including non-PyTorch memory, this process has 1.39 GiB memory in use. Of the allocated memory 843.37 MiB is allocated by PyTorch, and 48.63 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Unhandled error (suppress with 'RAY_IGNORE_UNHANDLED_ERRORS=1'): [36mray::WorkerDict.actor_rollout_compute_log_prob()[39m (pid=689410, ip=128.101.106.33, actor_id=0259b72fd3db1308653892b301000000, repr=<verl.single_controller.ray.base.WorkerDict object at 0x7afb5f79c730>)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/single_controller/ray/base.py", line 399, in func
+    return getattr(self.worker_dict[key], name)(*args, **kwargs)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/single_controller/base/decorator.py", line 404, in inner
+    return func(*args, **kwargs)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/mix_src/mix_fsdp_worker.py", line 451, in compute_log_prob
+    old_log_probs = self.actor.compute_log_prob(data=data)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/workers/actor/dp_actor.py", line 206, in compute_log_prob
+    _, log_probs = self._forward_micro_batch(micro_batch, temperature=temperature)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/workers/actor/dp_actor.py", line 146, in _forward_micro_batch
+    output = self.actor_module(input_ids=input_ids,
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py", line 863, in forward
+    output = self._fsdp_wrapped_module(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 1179, in forward
+    logits = self.lm_head(hidden_states[:, -num_logits_to_keep:, :])
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/linear.py", line 117, in forward
+    return F.linear(input, self.weight, self.bias)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 39.12 GiB. GPU 0 has a total capacity of 23.64 GiB of which 22.26 GiB is free. Including non-PyTorch memory, this process has 1.37 GiB memory in use. Of the allocated memory 827.62 MiB is allocated by PyTorch, and 42.38 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Unhandled error (suppress with 'RAY_IGNORE_UNHANDLED_ERRORS=1'): [36mray::WorkerDict.actor_rollout_compute_log_prob()[39m (pid=689415, ip=128.101.106.33, actor_id=f2fc84af5b96ef477e942c0401000000, repr=<verl.single_controller.ray.base.WorkerDict object at 0x73587dad07c0>)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/single_controller/ray/base.py", line 399, in func
+    return getattr(self.worker_dict[key], name)(*args, **kwargs)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/single_controller/base/decorator.py", line 404, in inner
+    return func(*args, **kwargs)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/mix_src/mix_fsdp_worker.py", line 451, in compute_log_prob
+    old_log_probs = self.actor.compute_log_prob(data=data)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/workers/actor/dp_actor.py", line 206, in compute_log_prob
+    _, log_probs = self._forward_micro_batch(micro_batch, temperature=temperature)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/workers/actor/dp_actor.py", line 146, in _forward_micro_batch
+    output = self.actor_module(input_ids=input_ids,
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py", line 863, in forward
+    output = self._fsdp_wrapped_module(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 1179, in forward
+    logits = self.lm_head(hidden_states[:, -num_logits_to_keep:, :])
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/linear.py", line 117, in forward
+    return F.linear(input, self.weight, self.bias)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 41.73 GiB. GPU 0 has a total capacity of 23.64 GiB of which 22.24 GiB is free. Including non-PyTorch memory, this process has 1.39 GiB memory in use. Of the allocated memory 843.37 MiB is allocated by PyTorch, and 46.63 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Unhandled error (suppress with 'RAY_IGNORE_UNHANDLED_ERRORS=1'): [36mray::WorkerDict.actor_rollout_compute_log_prob()[39m (pid=689406, ip=128.101.106.33, actor_id=914437d2aa39691626e3e58401000000, repr=<verl.single_controller.ray.base.WorkerDict object at 0x7b7967f98f40>)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/single_controller/ray/base.py", line 399, in func
+    return getattr(self.worker_dict[key], name)(*args, **kwargs)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/single_controller/base/decorator.py", line 404, in inner
+    return func(*args, **kwargs)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/mix_src/mix_fsdp_worker.py", line 451, in compute_log_prob
+    old_log_probs = self.actor.compute_log_prob(data=data)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/workers/actor/dp_actor.py", line 206, in compute_log_prob
+    _, log_probs = self._forward_micro_batch(micro_batch, temperature=temperature)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/workers/actor/dp_actor.py", line 146, in _forward_micro_batch
+    output = self.actor_module(input_ids=input_ids,
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py", line 863, in forward
+    output = self._fsdp_wrapped_module(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 1179, in forward
+    logits = self.lm_head(hidden_states[:, -num_logits_to_keep:, :])
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/linear.py", line 117, in forward
+    return F.linear(input, self.weight, self.bias)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 44.34 GiB. GPU 0 has a total capacity of 23.64 GiB of which 22.24 GiB is free. Including non-PyTorch memory, this process has 1.39 GiB memory in use. Of the allocated memory 859.12 MiB is allocated by PyTorch, and 30.88 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Unhandled error (suppress with 'RAY_IGNORE_UNHANDLED_ERRORS=1'): [36mray::WorkerDict.actor_rollout_compute_log_prob()[39m (pid=688381, ip=128.101.106.33, actor_id=adabd050a55434e5ecc6cfd801000000, repr=<verl.single_controller.ray.base.WorkerDict object at 0x7d9ebab01f30>)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/single_controller/ray/base.py", line 399, in func
+    return getattr(self.worker_dict[key], name)(*args, **kwargs)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/single_controller/base/decorator.py", line 404, in inner
+    return func(*args, **kwargs)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/mix_src/mix_fsdp_worker.py", line 451, in compute_log_prob
+    old_log_probs = self.actor.compute_log_prob(data=data)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/workers/actor/dp_actor.py", line 206, in compute_log_prob
+    _, log_probs = self._forward_micro_batch(micro_batch, temperature=temperature)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/workers/actor/dp_actor.py", line 146, in _forward_micro_batch
+    output = self.actor_module(input_ids=input_ids,
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py", line 863, in forward
+    output = self._fsdp_wrapped_module(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 1179, in forward
+    logits = self.lm_head(hidden_states[:, -num_logits_to_keep:, :])
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/linear.py", line 117, in forward
+    return F.linear(input, self.weight, self.bias)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 41.73 GiB. GPU 0 has a total capacity of 23.64 GiB of which 22.19 GiB is free. Including non-PyTorch memory, this process has 1.39 GiB memory in use. Of the allocated memory 843.37 MiB is allocated by PyTorch, and 46.63 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Unhandled error (suppress with 'RAY_IGNORE_UNHANDLED_ERRORS=1'): [36mray::WorkerDict.actor_rollout_compute_log_prob()[39m (pid=689401, ip=128.101.106.33, actor_id=b314be4ba171721ec676a39201000000, repr=<verl.single_controller.ray.base.WorkerDict object at 0x7854a5db8880>)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/single_controller/ray/base.py", line 399, in func
+    return getattr(self.worker_dict[key], name)(*args, **kwargs)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/single_controller/base/decorator.py", line 404, in inner
+    return func(*args, **kwargs)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/mix_src/mix_fsdp_worker.py", line 451, in compute_log_prob
+    old_log_probs = self.actor.compute_log_prob(data=data)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/workers/actor/dp_actor.py", line 206, in compute_log_prob
+    _, log_probs = self._forward_micro_batch(micro_batch, temperature=temperature)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/workers/actor/dp_actor.py", line 146, in _forward_micro_batch
+    output = self.actor_module(input_ids=input_ids,
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py", line 863, in forward
+    output = self._fsdp_wrapped_module(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 1179, in forward
+    logits = self.lm_head(hidden_states[:, -num_logits_to_keep:, :])
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/linear.py", line 117, in forward
+    return F.linear(input, self.weight, self.bias)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 41.73 GiB. GPU 0 has a total capacity of 23.64 GiB of which 22.24 GiB is free. Including non-PyTorch memory, this process has 1.39 GiB memory in use. Of the allocated memory 843.37 MiB is allocated by PyTorch, and 46.63 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Unhandled error (suppress with 'RAY_IGNORE_UNHANDLED_ERRORS=1'): [36mray::WorkerDict.actor_rollout_compute_log_prob()[39m (pid=689405, ip=128.101.106.33, actor_id=6f07126025fd3012b1af61e001000000, repr=<verl.single_controller.ray.base.WorkerDict object at 0x77e2bb7907c0>)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/single_controller/ray/base.py", line 399, in func
+    return getattr(self.worker_dict[key], name)(*args, **kwargs)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/single_controller/base/decorator.py", line 404, in inner
+    return func(*args, **kwargs)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/mix_src/mix_fsdp_worker.py", line 451, in compute_log_prob
+    old_log_probs = self.actor.compute_log_prob(data=data)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/workers/actor/dp_actor.py", line 206, in compute_log_prob
+    _, log_probs = self._forward_micro_batch(micro_batch, temperature=temperature)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/workers/actor/dp_actor.py", line 146, in _forward_micro_batch
+    output = self.actor_module(input_ids=input_ids,
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py", line 863, in forward
+    output = self._fsdp_wrapped_module(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 1179, in forward
+    logits = self.lm_head(hidden_states[:, -num_logits_to_keep:, :])
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/nn/modules/linear.py", line 117, in forward
+    return F.linear(input, self.weight, self.bias)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 44.34 GiB. GPU 0 has a total capacity of 23.64 GiB of which 22.23 GiB is free. Including non-PyTorch memory, this process has 1.39 GiB memory in use. Of the allocated memory 859.12 MiB is allocated by PyTorch, and 32.88 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

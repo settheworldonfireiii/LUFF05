@@ -1,0 +1,224 @@
+Using LocalLogger is deprecated. The constructor API will change
+Checkpoint tracker file does not exist: %s /mnt/data2/radke149/LUFFY/luffy/verl/checkpoints/luffy-math-test/LUFFY_TEST/latest_checkpointed_iteration.txt
+Training from scratch
+ERROR:2026-09-17 18:56:06,972:Error comparing zoo and zoo
+Traceback (most recent call last):
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/math_verify/grader.py", line 700, in compare_single_extraction_wrapper
+    return compare_single_extraction(g, t)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/math_verify/utils.py", line 50, in wrapper
+    return func(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/math_verify/grader.py", line 682, in compare_single_extraction
+    return sympy_expr_eq(gold, target, float_rounding, numeric_precision, strict)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/math_verify/grader.py", line 565, in sympy_expr_eq
+    if sympy_str_eq(gold, pred):
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/math_verify/grader.py", line 311, in sympy_str_eq
+    raise ValueError("Can't evaluate nan or zoo")
+ValueError: Can't evaluate nan or zoo
+Unhandled error (suppress with 'RAY_IGNORE_UNHANDLED_ERRORS=1'): [36mray::WorkerDict.actor_rollout_update_actor()[39m (pid=779327, ip=128.101.106.33, actor_id=a38c1ba6d397b133251511b301000000, repr=<verl.single_controller.ray.base.WorkerDict object at 0x7abd17b94f10>)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/single_controller/ray/base.py", line 399, in func
+    return getattr(self.worker_dict[key], name)(*args, **kwargs)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/single_controller/base/decorator.py", line 404, in inner
+    return func(*args, **kwargs)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/mix_src/mix_fsdp_worker.py", line 379, in update_actor
+    metrics = self.actor.update_policy(data=data)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/mix_src/mix_actor.py", line 244, in update_policy
+    loss.backward()
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_tensor.py", line 521, in backward
+    torch.autograd.backward(
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/autograd/__init__.py", line 289, in backward
+    _engine_run_backward(
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/autograd/graph.py", line 768, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/autograd/function.py", line 306, in apply
+    return user_fn(self, *args)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 1861, in backward
+    out = call_compiled_backward()
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 1809, in call_compiled_backward
+    out = call_func_at_runtime_with_args(
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 120, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 600, in _fn
+    return fn(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_inductor/codecache.py", line 1131, in __call__
+    return self.current_callable(inputs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 944, in run
+    return model(new_inputs)
+  File "/tmp/torchinductor_radke149/pr/cprc3movgltixdw77oeo5typcz3icymgilq3gkrean66rcfzs2my.py", line 124, in call
+    buf1 = empty_strided_cuda((s2, s1), (s1, 1), torch.float16)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 8.12 GiB. GPU 0 has a total capacity of 23.64 GiB of which 4.88 GiB is free. Including non-PyTorch memory, this process has 18.75 GiB memory in use. Of the allocated memory 18.16 GiB is allocated by PyTorch, and 59.14 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Unhandled error (suppress with 'RAY_IGNORE_UNHANDLED_ERRORS=1'): [36mray::WorkerDict.actor_rollout_update_actor()[39m (pid=779324, ip=128.101.106.33, actor_id=525079a33f7cbac17933b4c601000000, repr=<verl.single_controller.ray.base.WorkerDict object at 0x7a8c71390f40>)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/single_controller/ray/base.py", line 399, in func
+    return getattr(self.worker_dict[key], name)(*args, **kwargs)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/single_controller/base/decorator.py", line 404, in inner
+    return func(*args, **kwargs)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/mix_src/mix_fsdp_worker.py", line 379, in update_actor
+    metrics = self.actor.update_policy(data=data)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/mix_src/mix_actor.py", line 244, in update_policy
+    loss.backward()
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_tensor.py", line 521, in backward
+    torch.autograd.backward(
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/autograd/__init__.py", line 289, in backward
+    _engine_run_backward(
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/autograd/graph.py", line 768, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/autograd/function.py", line 306, in apply
+    return user_fn(self, *args)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 1861, in backward
+    out = call_compiled_backward()
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 1809, in call_compiled_backward
+    out = call_func_at_runtime_with_args(
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 120, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 600, in _fn
+    return fn(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_inductor/codecache.py", line 1131, in __call__
+    return self.current_callable(inputs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 944, in run
+    return model(new_inputs)
+  File "/tmp/torchinductor_radke149/sx/csx57mpoitxfi7ol7pcioknuaupbbgh73i77n7zhyrrodcfjamsd.py", line 124, in call
+    buf1 = empty_strided_cuda((s2, s1), (s1, 1), torch.float16)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 8.36 GiB. GPU 0 has a total capacity of 23.64 GiB of which 4.31 GiB is free. Including non-PyTorch memory, this process has 19.32 GiB memory in use. Of the allocated memory 18.69 GiB is allocated by PyTorch, and 101.11 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Unhandled error (suppress with 'RAY_IGNORE_UNHANDLED_ERRORS=1'): [36mray::WorkerDict.actor_rollout_update_actor()[39m (pid=779321, ip=128.101.106.33, actor_id=adaa8da3fb170de9b1148e7901000000, repr=<verl.single_controller.ray.base.WorkerDict object at 0x75356f295fc0>)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/single_controller/ray/base.py", line 399, in func
+    return getattr(self.worker_dict[key], name)(*args, **kwargs)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/single_controller/base/decorator.py", line 404, in inner
+    return func(*args, **kwargs)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/mix_src/mix_fsdp_worker.py", line 379, in update_actor
+    metrics = self.actor.update_policy(data=data)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/mix_src/mix_actor.py", line 244, in update_policy
+    loss.backward()
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_tensor.py", line 521, in backward
+    torch.autograd.backward(
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/autograd/__init__.py", line 289, in backward
+    _engine_run_backward(
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/autograd/graph.py", line 768, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/autograd/function.py", line 306, in apply
+    return user_fn(self, *args)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 1861, in backward
+    out = call_compiled_backward()
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 1809, in call_compiled_backward
+    out = call_func_at_runtime_with_args(
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 120, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 600, in _fn
+    return fn(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_inductor/codecache.py", line 1131, in __call__
+    return self.current_callable(inputs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 944, in run
+    return model(new_inputs)
+  File "/tmp/torchinductor_radke149/d5/cd5yezoaepoopiukhohexrd6a4xcdzbzt23rxkczw35ynyhzktnk.py", line 124, in call
+    buf1 = empty_strided_cuda((s2, s1), (s1, 1), torch.float16)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 7.28 GiB. GPU 0 has a total capacity of 23.64 GiB of which 6.68 GiB is free. Including non-PyTorch memory, this process has 16.95 GiB memory in use. Of the allocated memory 16.34 GiB is allocated by PyTorch, and 89.58 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Unhandled error (suppress with 'RAY_IGNORE_UNHANDLED_ERRORS=1'): [36mray::WorkerDict.actor_rollout_update_actor()[39m (pid=779322, ip=128.101.106.33, actor_id=5639904e1acddebcb0947ed801000000, repr=<verl.single_controller.ray.base.WorkerDict object at 0x7a877b39c820>)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/single_controller/ray/base.py", line 399, in func
+    return getattr(self.worker_dict[key], name)(*args, **kwargs)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/single_controller/base/decorator.py", line 404, in inner
+    return func(*args, **kwargs)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/mix_src/mix_fsdp_worker.py", line 379, in update_actor
+    metrics = self.actor.update_policy(data=data)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/mix_src/mix_actor.py", line 244, in update_policy
+    loss.backward()
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_tensor.py", line 521, in backward
+    torch.autograd.backward(
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/autograd/__init__.py", line 289, in backward
+    _engine_run_backward(
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/autograd/graph.py", line 768, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/autograd/function.py", line 306, in apply
+    return user_fn(self, *args)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 1861, in backward
+    out = call_compiled_backward()
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 1809, in call_compiled_backward
+    out = call_func_at_runtime_with_args(
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 120, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 600, in _fn
+    return fn(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_inductor/codecache.py", line 1131, in __call__
+    return self.current_callable(inputs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 944, in run
+    return model(new_inputs)
+  File "/tmp/torchinductor_radke149/ml/cml5ovxlal3oumzvslfxbp65l5dm4r5ocb3gwjf5hwl2ltakjpbi.py", line 124, in call
+    buf1 = empty_strided_cuda((s2, s1), (s1, 1), torch.float16)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 8.87 GiB. GPU 0 has a total capacity of 23.64 GiB of which 3.24 GiB is free. Including non-PyTorch memory, this process has 20.39 GiB memory in use. Of the allocated memory 19.79 GiB is allocated by PyTorch, and 75.60 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Unhandled error (suppress with 'RAY_IGNORE_UNHANDLED_ERRORS=1'): [36mray::WorkerDict.actor_rollout_update_actor()[39m (pid=778276, ip=128.101.106.33, actor_id=af5be26ba99c178e6e30ea4601000000, repr=<verl.single_controller.ray.base.WorkerDict object at 0x7e894fceca60>)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/single_controller/ray/base.py", line 399, in func
+    return getattr(self.worker_dict[key], name)(*args, **kwargs)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/single_controller/base/decorator.py", line 404, in inner
+    return func(*args, **kwargs)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/mix_src/mix_fsdp_worker.py", line 379, in update_actor
+    metrics = self.actor.update_policy(data=data)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/mix_src/mix_actor.py", line 244, in update_policy
+    loss.backward()
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_tensor.py", line 521, in backward
+    torch.autograd.backward(
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/autograd/__init__.py", line 289, in backward
+    _engine_run_backward(
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/autograd/graph.py", line 768, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/autograd/function.py", line 306, in apply
+    return user_fn(self, *args)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 1861, in backward
+    out = call_compiled_backward()
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 1809, in call_compiled_backward
+    out = call_func_at_runtime_with_args(
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 120, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 600, in _fn
+    return fn(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_inductor/codecache.py", line 1131, in __call__
+    return self.current_callable(inputs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 944, in run
+    return model(new_inputs)
+  File "/tmp/torchinductor_radke149/jh/cjhua732zbtbeqcflqcqk6ssyxqtlvurbkfzjkrijnu7cw3i57v7.py", line 124, in call
+    buf1 = empty_strided_cuda((s2, s1), (s1, 1), torch.float16)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 7.37 GiB. GPU 0 has a total capacity of 23.64 GiB of which 6.44 GiB is free. Including non-PyTorch memory, this process has 17.14 GiB memory in use. Of the allocated memory 16.54 GiB is allocated by PyTorch, and 79.56 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Unhandled error (suppress with 'RAY_IGNORE_UNHANDLED_ERRORS=1'): [36mray::WorkerDict.actor_rollout_update_actor()[39m (pid=779316, ip=128.101.106.33, actor_id=206e01f2212f79ff9110ba5001000000, repr=<verl.single_controller.ray.base.WorkerDict object at 0x79f821898820>)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/single_controller/ray/base.py", line 399, in func
+    return getattr(self.worker_dict[key], name)(*args, **kwargs)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/single_controller/base/decorator.py", line 404, in inner
+    return func(*args, **kwargs)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/mix_src/mix_fsdp_worker.py", line 379, in update_actor
+    metrics = self.actor.update_policy(data=data)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/mix_src/mix_actor.py", line 244, in update_policy
+    loss.backward()
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_tensor.py", line 521, in backward
+    torch.autograd.backward(
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/autograd/__init__.py", line 289, in backward
+    _engine_run_backward(
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/autograd/graph.py", line 768, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/autograd/function.py", line 306, in apply
+    return user_fn(self, *args)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 1861, in backward
+    out = call_compiled_backward()
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 1809, in call_compiled_backward
+    out = call_func_at_runtime_with_args(
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 120, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 600, in _fn
+    return fn(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_inductor/codecache.py", line 1131, in __call__
+    return self.current_callable(inputs)
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 944, in run
+    return model(new_inputs)
+  File "/tmp/torchinductor_radke149/y4/cy4duvmwm76aqn3454hg5cvpk6ve2vce2p4gwzx3xxk5at4veft6.py", line 124, in call
+    buf1 = empty_strided_cuda((s2, s1), (s1, 1), torch.float16)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 7.70 GiB. GPU 0 has a total capacity of 23.64 GiB of which 5.79 GiB is free. Including non-PyTorch memory, this process has 17.84 GiB memory in use. Of the allocated memory 17.25 GiB is allocated by PyTorch, and 68.31 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Unhandled error (suppress with 'RAY_IGNORE_UNHANDLED_ERRORS=1'): [36mray::WorkerDict.actor_rollout_update_actor()[39m (pid=779320, ip=128.101.106.33, actor_id=54e84de48ca26515fffab0d101000000, repr=<verl.single_controller.ray.base.WorkerDict object at 0x76fb950c4f10>)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/single_controller/ray/base.py", line 399, in func
+    return getattr(self.worker_dict[key], name)(*args, **kwargs)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/single_controller/base/decorator.py", line 404, in inner
+    return func(*args, **kwargs)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/mix_src/mix_fsdp_worker.py", line 379, in update_actor
+    metrics = self.actor.update_policy(data=data)
+  File "/mnt/data2/radke149/LUFFY/luffy/verl/verl/mix_src/mix_actor.py", line 244, in update_policy
+    loss.backward()
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/_tensor.py", line 521, in backward
+    torch.autograd.backward(
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/autograd/__init__.py", line 289, in backward
+    _engine_run_backward(
+  File "/mnt/data2/radke149/miniconda3/envs/luffy/lib/python3.10/site-packages/torch/autograd/graph.py", line 768, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 6.36 GiB. GPU 0 has a total capacity of 23.64 GiB of which 2.30 GiB is free. Including non-PyTorch memory, this process has 21.33 GiB memory in use. Of the allocated memory 20.73 GiB is allocated by PyTorch, and 77.25 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
